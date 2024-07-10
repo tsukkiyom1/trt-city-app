@@ -17,5 +17,5 @@ model District {
   Id     Int    @id @default(autoincrement())
   Name   String
   City   City   @relation(fields: [CityId], references: [Id])
-  CityId Int    @unique
+  CityId Int
 }
