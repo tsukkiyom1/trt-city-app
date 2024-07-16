@@ -12,6 +12,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="tr">
+      <p>welcome to our web app</p>
+      <p></p>
       <body>{children}</body>
     </html>
   );

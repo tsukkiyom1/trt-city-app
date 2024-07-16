@@ -2,6 +2,10 @@
 
 import { useEffect, useState } from "react";
 
+//const page = () => {
+//return <div> Hello user </div>;
+//};
+
 export default function Home() {
   // states
   const [cities, setCities] = useState<
