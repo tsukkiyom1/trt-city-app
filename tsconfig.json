@@ -16,6 +16,11 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
+    "baseUrl": ".", // Add this line
+    "paths": {
+      "@/*": ["app/*"], // Adjust this based on your actual folder structure
+      "src/*": ["app/*"] // Optional, if you use 'src' as a base directory
+    },
     "plugins": [
       {
         "name": "next"
