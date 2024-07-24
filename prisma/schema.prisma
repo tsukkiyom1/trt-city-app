@@ -8,14 +8,29 @@ datasource db {
 }
 
 model City {
-  Id        Int        @id @unique @default(autoincrement())
-  Name      String
-  Districts District[]
+  Id         Int          @id @unique @default(autoincrement())
+  Name       String
+  Districts  District[]
+  Submissions Submission[]
 }
 
 model District {
-  Id     Int    @id @default(autoincrement())
-  Name   String
-  City   City   @relation(fields: [CityId], references: [Id])
-  CityId Int
+  Id         Int          @id @default(autoincrement())
+  Name       String
+  City       City         @relation(fields: [CityId], references: [Id])
+  CityId     Int
+  Submissions Submission[]
+}
+
+model Submission {
+  Id           Int       @id @default(autoincrement())
+  Name         String
+  Surname      String
+  Email        String    @unique
+  PhoneNumber  String
+  City         City?      @relation(fields: [CityId], references: [Id])
+  CityId       Int
+  District     District?  @relation(fields: [DistrictId], references: [Id])
+  DistrictId   Int
+  SubmittedAt  DateTime  @default(now())
 }
